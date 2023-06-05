@@ -382,8 +382,9 @@ def get_game_prompt(date, team):
         data.get_scoring_plays()
         # data.get_wl_pitchers()
         game_prompt = create_prompt(data)
+        print(game_prompt)
         messages = [
-            {"role": "system", "content": "You are an AI designed to input formatted stats from a baseball game and return a narrative story about what happened in the game"},
+            {"role": "system", "content": "You are an AI designed to input formatted stats from a baseball game and return a true narrative story about what happened in the game based on the given statistics. Do not generate any details not given to you."},
             {"role": "user", "content": game_prompt}
         ]
 
